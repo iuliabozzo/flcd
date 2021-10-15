@@ -10,4 +10,4 @@ st.insert('asdf')
 print(st)
 
 print(st.contains('ab'))
-print(st.lookup('asdfg'))
+print(st.lookup('asdf'))
