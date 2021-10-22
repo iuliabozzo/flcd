@@ -1,0 +1,16 @@
+int a, i;
+boolean ok = true;
+read(a);
+if(a < 2 or (a > 2 and a % 2 == 0)){
+ok = false;
+}
+for(i = 3; i * i <= a; i = i + 2){
+if(a % i == 0){
+ok = false;
+}
+}
+if(ok == true){
+write(“prime”); }
+else {
+write(“not prime”);
+}

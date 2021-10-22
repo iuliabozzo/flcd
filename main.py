@@ -1,13 +1,24 @@
+import re
+
 from domain.symbol_table import SymbolTable
+from domain.scanner import Scanner
+from domain.tokens_manager import *
 
-st = SymbolTable(10)
-st.insert('ab')
-st.insert('ba')
-st.insert('5')
-st.insert('12')
-st.insert('asdf')
-st.insert('asdf')
-print(st)
+class Main:
+    def __init__(self):
+        self.symbol_table = SymbolTable(19)
+        self.scanner = Scanner()
 
-print(st.contains('ab'))
-print(st.lookup('asdf'))
+    def run(self):
+        readFile()
+        fileName = "p1.txt"
+
+        with open(fileName, 'r') as file:
+            lineCounter = 0
+            for line in file:
+                lineCounter += 1
+                tokens = self.scanner.scan(line.strip())
+                print(tokens)
+
+main = Main()
+main.run()
