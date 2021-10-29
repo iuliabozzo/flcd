@@ -31,5 +31,5 @@ class HashTable:
     def __str__(self):
         result = "Symbol Table\n"
         for i in range(self._capacity):
-            result = result + str(i) + "->" + str(self._items[i]) + "\n"
+            result = result + str(i) + "-----" + str(self._items[i]) + "\n"
         return result

@@ -27,6 +27,7 @@ and
 or
 array
 int
+boolean
 char
 string
 read
@@ -35,3 +36,5 @@ if
 else
 for
 while
+true
+false

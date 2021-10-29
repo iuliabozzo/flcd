@@ -5,13 +5,16 @@ read(c);
 if(a>b and a>c){
 max=a;
 }
-else
+else{
 if(b>a and b>c){
 max=b;
 }
+}
 else
+{
 if(c>a and c>b){
 max=c;
+}
 }
 else{
 max=0;

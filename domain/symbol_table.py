@@ -1,5 +1,6 @@
 from domain.hashtable import HashTable
 
+
 class SymbolTable:
     def __init__(self, capacity):
         self._hashtable = HashTable(capacity)
