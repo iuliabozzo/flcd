@@ -19,8 +19,14 @@ def get_operator(line, index, operators):
 
 
 def get_string_token(line, index):
-    token = re.findall(r'("[^"]*")', line)[0]
-    index = index + len(token)
+    token = ''
+    quotes = 0
+
+    while index < len(line) and quotes < 2:
+        if line[index] == '\"':
+            quotes += 1
+        token += line[index]
+        index += 1
 
     return token, index
 

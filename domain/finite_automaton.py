@@ -28,6 +28,13 @@ class FiniteAutomaton:
             raise Exception("Transition is invalid")
 
     @staticmethod
+    def already_added_transition(crt_state, input, next_state, transitions):
+        for t in transitions[(crt_state, input)]:
+            if t == next_state:
+                return True
+        return False
+
+    @staticmethod
     def read_from_file(file_name):
         with open(file_name) as file:
             Q = FiniteAutomaton.line_to_list(file.readline())
@@ -46,7 +53,8 @@ class FiniteAutomaton:
 
                 FiniteAutomaton.validate_transition(crt_state, input, next_state, E, Q)
                 if (crt_state, input) in S.keys():
-                    S[(crt_state, input)].append(next_state)
+                    if FiniteAutomaton.already_added_transition(crt_state, input, next_state, S) is False:
+                        S[(crt_state, input)].append(next_state)
                 else:
                     S[(crt_state, input)] = [next_state]
 

@@ -19,4 +19,4 @@ max=c;
 else{
 max=0;
 }
-write(max);
+write("max);
